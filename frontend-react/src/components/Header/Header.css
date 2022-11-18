@@ -1,0 +1,72 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+nav>* {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px
+}
+
+nav>div:first-child,
+
+/*logo*/
+
+nav>*>* {
+    /*sous-cat*/
+    padding: 15px 30px;
+    background-color: var(--btn-color);
+    border-radius: 8px;
+    font-weight: 700;
+}
+
+nav>div:first-child {
+    background: linear-gradient(95.04deg, #0084ff -44.68%, #5F1977 124%);
+}
+
+nav>*>*:hover {
+    /*Select chain and connect*/
+    background-color: var(--btn-hover-color);
+    cursor: pointer;
+}
+
+.btnSelectChain {
+    height: auto;
+    padding: 15px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.btnSelectChain>img {
+    height: 20px;
+}
+
+.menuSelectChain {
+    position: absolute;
+    background: var(--btn-color);
+    top: 60px;
+    left: 0px;
+    border-radius: 8px;
+    list-style-type: none;
+    margin: 0;
+    padding: 5px;
+}
+
+.menuSelectChain>li>img {
+    height: 20px;
+    margin-right: 10px;
+}
+
+.menuSelectChain>* {
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+}
+
+.menuSelectChain>*:hover {
+    background: var(--btn-hover-color);
+}
