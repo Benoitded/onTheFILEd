@@ -3,8 +3,8 @@ import "./Header.css";
 import { dataNetworks } from "../../data/dataNetworks.jsx";
 
 import wheel from "../../assets/wheel.svg";
-import ethereumLogo from "../../assets/ethereumLogo.png";
-import goerliLogo from "../../assets/goerliLogo.png";
+import filecoinLogo from "../../assets/filecoinLogo.png";
+import wallabyLogo from "../../assets/wallabyLogo.png";
 
 export default function Header({
   currentAccount,
@@ -18,6 +18,8 @@ export default function Header({
   const chainIdToName = [];
   chainIdToName[1] = "ethereum";
   chainIdToName[5] = "goerli";
+  chainIdToName[314] = "filecoin";
+  chainIdToName[31415] = "wallaby";
 
   const networks = {
     filecoin: {
@@ -260,26 +262,26 @@ export default function Header({
   let iconChainURL = wheel;
   if (chain == "wallaby") {
     console.log("on est sur goerli");
-    iconChainURL = goerliLogo;
+    iconChainURL = wallabyLogo;
   } else if (chain == "filecoin") {
     console.log("on est sur eth");
-    iconChainURL = ethereumLogo;
+    iconChainURL = filecoinLogo;
   } else iconChainURL = wheel;
 
   return (
     <nav>
       <div onClick={() => console.log(chain)}>onTheFILEd</div>
       <div>
-        <div class="btnSelectChain" onClick={() => setSeeMenu(!seeMenu)}>
+        <div className="btnSelectChain" onClick={() => setSeeMenu(!seeMenu)}>
           <img src={iconChainURL} alt="wheel for setting" />
           {seeMenu && (
-            <ul class="menuSelectChain">
+            <ul className="menuSelectChain">
               <li onClick={() => handleNetworkSwitch("filecoin")}>
-                <img src={ethereumLogo} />
+                <img src={filecoinLogo} />
                 Filecoin
               </li>
               <li onClick={() => handleNetworkSwitch("wallaby")}>
-                <img src={goerliLogo} />
+                <img src={wallabyLogo} />
                 Wallaby
               </li>
             </ul>
