@@ -1,0 +1,20 @@
+.mainHeadLine {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 120px 0;
+    gap: 20px;
+}
+
+.mainHeadLine>* {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.firstRawHeadline {}
+
+.secondRawHeadline {
+    background-color: var( --btn-color);
+    border-radius: 16px;
+}

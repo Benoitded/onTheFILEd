@@ -20,38 +20,6 @@ export default function Header({
   chainIdToName[5] = "goerli";
 
   const networks = {
-    mainnet: {
-      chainName: "Ethereum Mainnet",
-      chain: "ETH",
-      icon: "ethereum",
-      rpc: [
-        "https://mainnet.infura.io/v3/${INFURA_API_KEY}",
-        "wss://mainnet.infura.io/ws/v3/${INFURA_API_KEY}",
-        "https://api.mycryptoapi.com/eth",
-        "https://cloudflare-eth.com",
-      ],
-      faucets: [],
-      nativeCurrency: {
-        name: "Ether",
-        symbol: "ETH",
-        decimals: 18,
-      },
-      infoURL: "https://ethereum.org",
-      shortName: "eth",
-      chainId: `0x${Number(1).toString(16)}`,
-      networkId: 1,
-      slip44: 60,
-      ens: {
-        registry: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
-      },
-      explorers: [
-        {
-          name: "etherscan",
-          url: "https://etherscan.io",
-          standard: "EIP3091",
-        },
-      ],
-    },
     filecoin: {
       chainName: "Filecoin — Mainnet",
       chain: "FIL",
@@ -87,24 +55,67 @@ export default function Header({
         },
       ],
     },
-    buildernet: {
-      chainName: "Filecoin — Buildernet",
+    wallaby: {
+      chainName: "Filecoin — Wallaby testnet",
       chain: "FIL",
       status: "incubating",
-      rpc: [],
-      faucets: [],
+      rpc: ["https://wallaby.node.glif.io/rpc/v0"],
+      faucets: ["https://wallaby.network/#faucet"],
       nativeCurrency: {
-        name: "filecoin",
-        symbol: "FIL",
+        name: "testnet filecoin",
+        symbol: "tFIL",
         decimals: 18,
       },
       infoURL: "https://filecoin.io",
-      shortName: "filecoin-buildernet",
+      shortName: "filecoin-wallaby",
       icon: "filecoin",
-      chainId: 3141,
-      networkId: 3141,
+      chainId: 31415,
+      networkId: 31415,
       slip44: 1,
-      explorers: [],
+      explorers: [
+        {
+          name: "Glif Explorer",
+          url: "https://explorer.glif.io/wallaby",
+          standard: "none",
+        },
+        {
+          name: "Filscan",
+          url: "https://wallaby.filscan.io",
+          standard: "none",
+        },
+      ],
+    },
+    mainnet: {
+      chainName: "Ethereum Mainnet",
+      chain: "ETH",
+      icon: "ethereum",
+      rpc: [
+        "https://mainnet.infura.io/v3/${INFURA_API_KEY}",
+        "wss://mainnet.infura.io/ws/v3/${INFURA_API_KEY}",
+        "https://api.mycryptoapi.com/eth",
+        "https://cloudflare-eth.com",
+      ],
+      faucets: [],
+      nativeCurrency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      infoURL: "https://ethereum.org",
+      shortName: "eth",
+      chainId: `0x${Number(1).toString(16)}`,
+      networkId: 1,
+      slip44: 60,
+      ens: {
+        registry: "0x00000000000C2E074eC69A0dFb2997BA6C7d2e1e",
+      },
+      explorers: [
+        {
+          name: "etherscan",
+          url: "https://etherscan.io",
+          standard: "EIP3091",
+        },
+      ],
     },
     goerli: {
       chainName: "Görli",
@@ -247,13 +258,13 @@ export default function Header({
   }, [window.ethereum]);
 
   let iconChainURL = wheel;
-  if (chain == "goerli") {
+  if (chain == "wallaby") {
     console.log("on est sur goerli");
     iconChainURL = goerliLogo;
-  } else if (chain == "ethereum") {
+  } else if (chain == "filecoin") {
     console.log("on est sur eth");
     iconChainURL = ethereumLogo;
-  } else iconChainURL = "../../assets/wheel.svg";
+  } else iconChainURL = wheel;
 
   return (
     <nav>
@@ -265,11 +276,11 @@ export default function Header({
             <ul class="menuSelectChain">
               <li onClick={() => handleNetworkSwitch("filecoin")}>
                 <img src={ethereumLogo} />
-                Ethereum
+                Filecoin
               </li>
-              <li onClick={() => handleNetworkSwitch("buildernet")}>
+              <li onClick={() => handleNetworkSwitch("wallaby")}>
                 <img src={goerliLogo} />
-                Goerli
+                Wallaby
               </li>
             </ul>
           )}
