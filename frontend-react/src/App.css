@@ -52,21 +52,50 @@ body {
     color: var(--text-color);
 }
 
+main {
+    overflow: hidden;
+}
+
 .App {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 20px;
+    overflow: hidden;
 }
 
 .App>* {
-    max-width: 1000px;
+    max-width: 1100px;
     width: 100%;
     padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #d1d1d1;
+}
+
+img {
+    width: 100%;
+}
+
+button {
+    border: none;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #DDDDDD;
+    cursor: pointer;
+    transition: 0.2s;
+    width: min-content;
+    white-space: nowrap;
 }
 
 h1 {
     font-size: 96px;
     font-weight: 800;
     margin: 0;
+}
+
+h4 {
+    text-align: center;
 }

@@ -1,0 +1,79 @@
+.mainCentered {
+    position: relative;
+}
+
+.mainSelectWinning {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.logoSelectWinning {
+    background: #333333;
+    border-radius: 8px;
+    padding: 15px 40px;
+    font-size: 32px;
+    transition: 0.2s;
+    cursor: pointer;
+    width: auto;
+}
+
+.logoSelectWinning:hover {
+    background: #474747;
+}
+
+#gradient1 {
+    position: absolute;
+    width: 616px;
+    height: 478px;
+    opacity: 0.3;
+    bottom: -100px;
+    left: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: -1;
+    transition: 2s;
+}
+
+#gradient2 {
+    position: absolute;
+    width: 716px;
+    height: 378px;
+    opacity: 0.2;
+    bottom: -100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    background: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: -1;
+    transition: 2s;
+}
+
+#gradient3 {
+    position: absolute;
+    width: 516px;
+    height: 378px;
+    opacity: 0.3;
+    bottom: -100px;
+    right: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #006eff 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: -1;
+    transition: 2s;
+}
+
+@media only screen and (max-width: 650px) {
+    .mainSelectWinning {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #gradient1 {
+        bottom: 60px;
+        left: -250px;
+    }
+    #gradient2 {
+        bottom: -100px;
+    }
+    #gradient3 {
+        bottom: 100px;
+        right: -250px;
+    }
+}

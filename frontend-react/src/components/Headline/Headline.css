@@ -17,4 +17,40 @@
 .secondRawHeadline {
     background-color: var( --btn-color);
     border-radius: 16px;
+    display: flex;
+    gap: 30px;
+}
+
+.caseSecondRawHeadline {
+    font-size: 22px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.caseSecondRawHeadline>h4 {
+    margin: 0 0 10px 0;
+}
+
+@media only screen and (max-width: 1000px) {
+    h1 {
+        font-size: 82px;
+    }
+}
+
+@media only screen and (max-width: 850px) {
+    h1 {
+        font-size: 68px;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    h1 {
+        font-size: 64px;
+    }
+    .mainHeadLine {
+        display: flex;
+        flex-direction: column;
+        padding: 120px 0;
+        gap: 20px;
+    }
 }
