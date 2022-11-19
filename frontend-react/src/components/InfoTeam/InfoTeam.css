@@ -85,7 +85,6 @@
 
 .sendMessage {
     border-radius: 16px;
-    background-color: var( --btn-color);
     display: grid;
     grid-template-columns: 4fr 1fr;
     margin-bottom: 10px;
@@ -198,4 +197,24 @@
     right: -50%;
     background: radial-gradient(50% 50% at 50% 50%, #006eff 0%, rgba(255, 0, 0, 0) 100%);
     z-index: 1;
+}
+
+@media only screen and (max-width: 650px) {
+    .lineInfoTeam {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .firstColumnInfoTeam>* {
+        border-radius: 16px;
+        height: 280px;
+        object-fit: cover;
+    }
+    .secondColumnInfoTeam>*:first-child {
+        /*Titre*/
+        font-size: 32px;
+    }
+    .numbersInfoTeam>*>*:last-child {
+        font-size: 26px;
+    }
 }
