@@ -1,0 +1,200 @@
+.mainInfoTeam {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.lineInfoTeam {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+}
+
+.firstColumnInfoTeam>* {
+    border-radius: 16px;
+    height: 380px;
+    object-fit: cover;
+}
+
+.secondColumnInfoTeam {
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    background-color: var( --btn-color);
+    padding: 20px;
+    text-align: center;
+    justify-content: space-around;
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.secondColumnInfoTeam>* {
+    padding: 10px;
+    border-bottom: 1px solid rgba(43, 43, 43, 0.624);
+}
+
+.secondColumnInfoTeam>*:first-child {
+    /*Titre*/
+    font-size: 38px;
+    font-weight: 800;
+}
+
+.secondColumnInfoTeam>*:last-child {
+    /*Étoiles*/
+    font-size: 18px;
+    border-bottom: none;
+}
+
+.numbersInfoTeam {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 5px;
+}
+
+.numbersInfoTeam>* {
+    display: flex;
+    flex-direction: column;
+}
+
+.numbersInfoTeam>*>*:first-child {
+    font-size: 12px;
+}
+
+.numbersInfoTeam>*>*:last-child {
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.secondColumnInfoTeam>button {
+    width: 100%;
+    background-color: #232232;
+}
+
+.secondColumnInfoTeam>button:hover {
+    background-color: #11111a;
+}
+
+.descriptionInfoTeam {
+    text-align: center;
+}
+
+
+/**** Send Message ****/
+
+.sendMessage {
+    border-radius: 16px;
+    background-color: var( --btn-color);
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    margin-bottom: 10px;
+}
+
+.sendMessage>input {
+    /*Text*/
+    border-radius: 8px 0 0 8px;
+    box-sizing: border-box;
+    border: none;
+    padding-left: 20px;
+}
+
+.sendMessage>button {
+    /*Send*/
+    width: 100%;
+    border-radius: 0 8px 8px 0;
+}
+
+
+/**** Book ****/
+
+.goldenBook {
+    border-radius: 16px;
+    background-color: var( --btn-color);
+    display: grid;
+    gap: 0px;
+}
+
+.messageBook {
+    padding: 20px;
+    border-bottom: 1px solid rgba(43, 43, 43, 0.624);
+    position: relative;
+}
+
+.contentMessage {
+    max-width: 60%;
+}
+
+.addressMessage {
+    color: #222222;
+    font-size: 12px;
+    text-align: end;
+}
+
+.dateMessage {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 20px;
+    font-size: 12px;
+}
+
+
+/**** Grise messages ****/
+
+.divsMessages {
+    position: relative;
+}
+
+.griseMessages {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    opacity: 0.9;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+
+/**** Gradient ****/
+
+#gradientTeam1 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    top: -50%;
+    left: -50%;
+    background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: 1;
+}
+
+#gradientTeam2 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    bottom: 0;
+    right: 0;
+    background: radial-gradient(50% 50% at 50% 50%, #ffffff 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: -1;
+    transition: 2s;
+}
+
+#gradientTeam3 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    bottom: -50%;
+    right: -50%;
+    background: radial-gradient(50% 50% at 50% 50%, #006eff 0%, rgba(255, 0, 0, 0) 100%);
+    z-index: 1;
+}

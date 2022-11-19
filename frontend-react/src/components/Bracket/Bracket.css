@@ -1,0 +1,125 @@
+h2 {
+    width: 100%;
+}
+
+.mainBracket {
+    display: flex;
+    justify-content: space-between;
+    overflow-x: scroll;
+    gap: 20px;
+    text-align: center;
+}
+
+.mainBracket::-webkit-scrollbar {
+    display: none;
+}
+
+
+/* Hide scrollbar for IE, Edge and Firefox */
+
+.mainBracket {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.firstLine,
+.secondLine,
+.thirdLine,
+.fourthLine {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    gap: 20px;
+    justify-content: center;
+}
+
+.divMatchLogo {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px dashed #272727;
+    border-radius: 8px;
+    padding: 10px;
+    transition: 0.2s;
+    background: var(--bg-color);
+    position: relative;
+    white-space: nowrap;
+}
+
+.divMatchLogo:nth-child(2n)::after {
+    content: "";
+    bottom: 50%;
+    right: -30%;
+    position: absolute;
+    width: 100px;
+    height: 190px;
+    border-radius: 8px;
+    border: 3px dashed #272727;
+    border-left: none;
+    z-index: -1;
+    background: var(--bg-color);
+}
+
+.divLogo {
+    background: #333333;
+    border-radius: 8px;
+    padding: 5px 40px;
+    font-size: 32px;
+    transition: 0.2s;
+}
+
+.firstLine>.divMatchLogo:hover {
+    background: #151515;
+}
+
+.firstLine>.divMatchLogo>.divLogo:hover {
+    cursor: pointer;
+    background: #474747;
+}
+
+
+/**********************************************/
+
+.secondLine,
+.thirdLine,
+.fourthLine {
+    justify-content: space-around;
+}
+
+.secondLine>.divMatchLogo:nth-child(2n)::after,
+.thirdLine>.divMatchLogo:nth-child(2n)::after,
+.fourthLine>.divMatchLogo::after {
+    content: "";
+    bottom: 50%;
+    right: -30%;
+    position: absolute;
+    width: 30vw;
+    max-width: 250%;
+    height: 377px;
+    border-radius: 8px;
+    border: 3px dashed #272727;
+    border-left: none;
+    z-index: -2;
+    background: var(--bg-color);
+}
+
+
+/**********************************************/
+
+.thirdLine>.divMatchLogo:nth-child(2n)::after {
+    height: 750px;
+    z-index: -3;
+}
+
+
+/**********************************************/
+
+.fourthLine>.divMatchLogo::after {
+    right: 0;
+    height: 0;
+    border-right: none;
+    border-top: none;
+    z-index: -4;
+}
