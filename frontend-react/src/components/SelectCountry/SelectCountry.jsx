@@ -1,9 +1,11 @@
 import "./SelectCountry.css";
 import { dataCountries } from "../../data/dataCountries.jsx";
+import { useNavigate } from "react-router-dom";
 
 import React, { useState } from "react";
 
 export default function SelectCountry() {
+  const navigate = useNavigate();
   const [country, setCountry] = useState("");
   function updateColors(first) {
     let debSent = "radial-gradient(50% 50% at 50% 50%, ";
@@ -16,7 +18,9 @@ export default function SelectCountry() {
       debSent + first[2] + endSent;
   }
 
-  function updateActiveCountry(name) {}
+  function updateActiveCountry(name) {
+    navigate("/" + name);
+  }
 
   return (
     <div className="mainCentered">
@@ -26,9 +30,8 @@ export default function SelectCountry() {
           <button
             className="logoSelectWinning"
             id={name}
-            onMouseEnter={(e) => (
-              updateColors(color), updateActiveCountry(name)
-            )}
+            onClick={(e) => updateActiveCountry(name)}
+            onMouseEnter={(e) => updateColors(color)}
             key={e}
           >
             {logo}

@@ -8,7 +8,9 @@ import SelectCountry from "./components/SelectCountry/SelectCountry.jsx";
 import Bracket from "./components/Bracket/Bracket.jsx";
 import InfoTeam from "./components/InfoTeam/InfoTeam.jsx";
 import Footer from "./components/Footer/Footer.jsx";
-import TablePage from "./pages/TablePage/TablePage.jsx";
+import HomePage from "./pages/HomePage/HomePage.jsx";
+import CountryPage from "./pages/CountryPage/CountryPage.jsx";
+
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import { dataCountries } from "./data/dataCountries.jsx";
@@ -43,6 +45,7 @@ function App() {
 
         <Footer />
       </Router>
+      <Footer />
     </div>
   );
 }
