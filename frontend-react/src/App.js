@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Header from "./components/Header/Header.jsx";
+import Swap from "./components/Swap/Swap.jsx";
 import Headline from "./components/Headline/Headline.jsx";
 import SelectCountry from "./components/SelectCountry/SelectCountry.jsx";
 import Bracket from "./components/Bracket/Bracket.jsx";
@@ -18,50 +19,29 @@ function App() {
   const [chain, setChain] = useState("ethereum");
   return (
     <div className="App">
-      <Header
-        currentAccount={currentAccount}
-        setCurrentAccount={setCurrentAccount}
-        chain={chain}
-        setChain={setChain}
-      />
-      <main>
-        <InfoTeam dataCountries={dataCountries[1]} isHolder={true} />
-        <Headline />
-        <SelectCountry />
-        <Bracket />
-      </main>
-      <Footer />
       <Router>
-        <div className="App">
-          <Header
-            currentAccount={currentAccount}
-            setCurrentAccount={setCurrentAccount}
-            chain={chain}
-            setChain={setChain}
-          />
+        <Swap />
+        <Header
+          currentAccount={currentAccount}
+          setCurrentAccount={setCurrentAccount}
+          chain={chain}
+          setChain={setChain}
+        />
+        <main>
+          <InfoTeam dataCountries={dataCountries[1]} isHolder={false} />
           <Headline />
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Edeefeit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
+          <SelectCountry />
+          <Bracket />
+        </main>
 
-          <Link to="/table">Table</Link>
+        <Link to="/table">Table</Link>
 
-          <Routes>
-            <Route path="/" component={{}} />
-            <Route path="/table" element={<TablePage />} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path="/" component={{}} />
+          <Route path="/table" element={<TablePage />} />
+        </Routes>
+
+        <Footer />
       </Router>
     </div>
   );

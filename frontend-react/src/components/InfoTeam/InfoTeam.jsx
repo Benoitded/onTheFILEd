@@ -3,7 +3,7 @@ import "./InfoTeam.css";
 import { dataCountries } from "../../data/dataCountries.jsx";
 import { dataMessages } from "../../data/dataMessages.jsx";
 
-export default function InfoTeam({ dataCountries, isHolder }) {
+export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
   const rows = [];
   for (let i = 0; i < dataCountries.etoiles; i++) {
     rows.push(" ⭐️ ");
@@ -52,7 +52,9 @@ export default function InfoTeam({ dataCountries, isHolder }) {
                 " team on Twitter 🐥"}
             </button>
           ) : (
-            <button>{"Bet on " + dataCountries.name + "!"}</button>
+            <button onClick={() => setOpenSwap(true)}>
+              {"Bet on " + dataCountries.name + "!"}
+            </button>
           )}
           <div>{rows.map((e) => e)}</div> {/* Étoiles */}
           <div id="gradientTeam1" style={{}} />

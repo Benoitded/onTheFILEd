@@ -3,8 +3,8 @@ import "./Footer.css";
 
 export default function Footer({ currentAccount, chain, setChain }) {
   return (
-    <main>
-      <div className="mainFooter">Footer</div>
-    </main>
+    <footer className="mainFooter">
+      <div>Footer</div>
+    </footer>
   );
 }

@@ -16,14 +16,7 @@ export default function SelectCountry() {
       debSent + first[2] + endSent;
   }
 
-  function updateActiveCountry(name) {
-    console.log(name);
-    setCountry(name);
-    document
-      .getElementsByClassName("logoSelectWinning")
-      .classList.remove("actif");
-    document.getElementById(name).classList.toggle("actif");
-  }
+  function updateActiveCountry(name) {}
 
   return (
     <div className="mainCentered">
@@ -33,7 +26,9 @@ export default function SelectCountry() {
           <button
             className="logoSelectWinning"
             id={name}
-            onClick={(e) => (updateColors(color), updateActiveCountry(name))}
+            onMouseEnter={(e) => (
+              updateColors(color), updateActiveCountry(name)
+            )}
             key={e}
           >
             {logo}
