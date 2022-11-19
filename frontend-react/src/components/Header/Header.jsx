@@ -6,6 +6,8 @@ import wheel from "../../assets/wheel.svg";
 import filecoinLogo from "../../assets/filecoinLogo.png";
 import wallabyLogo from "../../assets/wallabyLogo.png";
 
+import { useNavigate } from "react-router-dom";
+
 export default function Header({
   currentAccount,
   setCurrentAccount,
@@ -14,6 +16,7 @@ export default function Header({
 }) {
   const [seeMenu, setSeeMenu] = React.useState(false);
   const [error, setError] = useState();
+  const navigate = useNavigate();
 
   const chainIdToName = [];
   chainIdToName[1] = "ethereum";
@@ -270,7 +273,7 @@ export default function Header({
 
   return (
     <nav>
-      <div onClick={() => console.log(chain)}>onTheFILEd</div>
+      <div onClick={() => navigate('/')}>onTheFILEd</div>
       <div>
         <div className="btnSelectChain" onClick={() => setSeeMenu(!seeMenu)}>
           <img src={iconChainURL} alt="wheel for setting" />

@@ -2,8 +2,21 @@ import React, { useEffect, useState } from "react";
 import "./InfoTeam.css";
 import { dataCountries } from "../../data/dataCountries.jsx";
 import { dataMessages } from "../../data/dataMessages.jsx";
+import Modal from 'react-modal';
+import Swap from "../../components/Swap/Swap.jsx";
 
-export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
+
+export default function InfoTeam({ dataCountries, isHolder }) {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
   const rows = [];
   for (let i = 0; i < dataCountries.etoiles; i++) {
     rows.push(" ⭐️ ");
@@ -19,9 +32,31 @@ export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
     console.log("Pas bien");
   }
 
-  console.log(messagesCleaned);
+  Modal.setAppElement('#root');
+
+  if(modalIsOpen){
+    document.body.style.overflow = 'hidden';
+  }else{
+    document.body.style.overflow = 'unset';
+  }
+
+
   return (
-    <div className="mainInfoTeam">
+    <div className="mainInfoTeam" >
+      <Modal
+        isOpen={modalIsOpen}
+        transparent={true}
+        closeTimeoutMS={100}
+        animationType="fade"
+        preventScroll={true}
+        style={{content:{backgroundColor:'transparent',borderWidth:0},overlay:{backgroundColor:'rgba(0,0,0,0.5)',borderWidth:0,width:'100%',height:'100%'}}}
+      >
+        <div style={{width:'100%',height:'100%',justifyContent:'center',alignItems:'center',display:'flex'}} onClick={()=>setIsOpen(false)}>
+            <div onClick={(e)=>{e.stopPropagation()}} style={{display:'flex',alignItems:'center',justifyContent:'center'}}>
+                <Swap/>
+            </div>
+        </div>
+      </Modal>
       <div className="lineInfoTeam">
         <div className="firstColumnInfoTeam">
           <img
@@ -46,13 +81,13 @@ export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
             </div>
           </div>
           {isHolder ? (
-            <button>
+            <button onClick={()=>{}}>
               {"🐥 Share your support to the " +
                 dataCountries.name +
                 " team on Twitter 🐥"}
             </button>
           ) : (
-            <button onClick={() => setOpenSwap(true)}>
+            <button onClick={() => openModal()}>
               {"Bet on " + dataCountries.name + "!"}
             </button>
           )}
