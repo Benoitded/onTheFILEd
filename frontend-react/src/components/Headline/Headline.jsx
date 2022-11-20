@@ -19,18 +19,19 @@ export default function Headline({ currentAccount, chain, setChain }) {
       <div className="secondRawHeadline">
         {dataHeadline.map(({ title, player, competitor, date }) => (
           <div className="caseSecondRawHeadline">
-            <div>{dataCountries.filter((e) => e.name == player.game).logo}</div>
             <h4>{title}</h4>
-            <div>
-              {player.name +
-                " " +
-                player.score +
-                " - " +
-                competitor.score +
-                " " +
-                competitor.name}
+            <div className="dataHeadline">
+              <div className="logoPays">
+                <div>{player.logo}</div>
+                <div>{player.name}</div>
+              </div>
+              <div className="scoreHeadline">3-3</div>
+              <div className="logoPays">
+                <div>{competitor.logo}</div>
+                <div>{competitor.name}</div>
+              </div>
             </div>
-            <div>{date}</div>
+            <div className="dateHeadline">{date}</div>
           </div>
         ))}
       </div>

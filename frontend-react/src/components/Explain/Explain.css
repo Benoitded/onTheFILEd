@@ -1,33 +1,38 @@
 .mainExplain {
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px;
+}
+
+.contentExplain {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 50px 0px;
     gap: 20px;
 }
 
-.mainExplain>* {
+.contentExplain>* {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 50px 0px;
+    gap: 10px;
     transition: 0.2s;
 }
 
-.mainExplain>*:hover {
+.contentExplain>*:hover {
     transform: scale(1.05);
 }
 
-.mainExplain>*>*:first-child {
+.contentExplain>*>*:first-child {
     /* Description */
-    height: 300px;
+    height: 250px;
     display: flex;
     align-items: center;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.mainExplain>*>*:last-child {
+.contentExplain>*>*:last-child {
     /* Description */
     font-size: 24px;
     font-weight: 600;
