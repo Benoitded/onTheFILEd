@@ -26,7 +26,7 @@ function App() {
   return (
     <div>
       <main>
-        <InfoTeam dataCountries={countryJson} isHolder={true} />
+        <InfoTeam dataCountries={countryJson} isHolder={false} />
         <TablePage />
       </main>
     </div>

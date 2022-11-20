@@ -40,7 +40,9 @@ export default function InfoTeam({ dataCountries, isHolder }) {
   console.log(messagesCleaned);
   return (
     <div className="mainInfoTeam">
-      {isSwap ? <Swap setIsSwap={setIsSwap} /> : null}
+      {isSwap ? (
+        <Swap setIsSwap={setIsSwap} country={dataCountries.logo} />
+      ) : null}
       <div className="lineInfoTeam">
         <div className="firstColumnInfoTeam">
           <img

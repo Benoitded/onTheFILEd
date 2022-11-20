@@ -149,6 +149,7 @@
 
 .griseMessages {
     box-sizing: border-box;
+    position: absolute;
     width: 100%;
     height: 100%;
     top: 0;
@@ -161,22 +162,6 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
-}
-
-.modal {
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 1;
-    z-index: 2;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    transition: opacity 2000ms ease-in-out;
 }
 
 .modal {

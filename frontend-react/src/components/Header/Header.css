@@ -60,6 +60,7 @@ nav>*>*:hover {
     margin: 0;
     padding: 5px;
     z-index: 5;
+    width: 120px;
 }
 
 .menuSelectChain>li>img {

@@ -4,7 +4,7 @@ import "./Swap.css";
 import wheel from "../../assets/wheel.svg";
 import filecoin from "../../assets/filecoinLogo.png";
 
-export default function Swap({ setIsSwap }) {
+export default function Swap({ setIsSwap, country }) {
   const [priceEuro, setPriceEuro] = useState();
   const [numberReceived, setNumberReceived] = useState(0);
   const priceFILE = 4.37235;
@@ -39,7 +39,7 @@ export default function Swap({ setIsSwap }) {
         </div>
         <div className="valueSwap">
           <div>{numberReceived}</div>
-          <img src={filecoin} alt="Logo filecoin" />
+          <div>{country}</div>
         </div>
 
         <div></div>
