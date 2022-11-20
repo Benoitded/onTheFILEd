@@ -4,7 +4,10 @@ import "./Swap.css";
 import wheel from "../../assets/wheel.svg";
 import filecoin from "../../assets/filecoinLogo.png";
 
-export default function Swap({ setIsSwap, country }) {
+import abi from "./../../utils/OnTheFILEd.json";
+import { ethers } from "ethers";
+
+export default function Swap({ setIsSwap, country, currentAccount }) {
   const [priceEuro, setPriceEuro] = useState();
   const [numberReceived, setNumberReceived] = useState(0);
   const priceFILE = 4.37235;
@@ -20,6 +23,36 @@ export default function Swap({ setIsSwap, country }) {
   function doNothing(event) {
     event.stopPropagation();
   }
+  //   console.log("currentAccount");
+  //   console.log(currentAccount);
+
+  const contractAddress = "0x9707c76133236872D039a8b9a18fCb14cb28c29C";
+  const contractABI = abi.abi;
+  const getTokens = async () => {
+    try {
+      const { ethereum } = window;
+      var amount = `${100}` + "0".repeat(18);
+
+      if (ethereum) {
+        const provider = new ethers.providers.Web3Provider(ethereum);
+        const signer = provider.getSigner();
+        const wavePortalContract = new ethers.Contract(
+          contractAddress,
+          contractABI,
+          signer
+        );
+        const waveTxn = await wavePortalContract.mint(currentAccount, 100);
+        console.log("Mining...", waveTxn.hash);
+
+        await waveTxn.wait();
+        console.log("Mined -- ", waveTxn.hash);
+      } else {
+        console.log("Ethereum object doesn't exist!");
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="mainSwap" onClick={closeSwap}>
       <div className="appSwap" onClick={(event) => doNothing(event)}>
@@ -43,7 +76,7 @@ export default function Swap({ setIsSwap, country }) {
         </div>
 
         <div></div>
-        <button>Support your team!</button>
+        <button onClick={getTokens}>Support your team!</button>
       </div>
     </div>
   );

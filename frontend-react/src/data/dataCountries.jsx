@@ -17,9 +17,10 @@ export const dataCountries = [
     logo: "🇵🇹",
     color: ["#008E0B", "#E9CD00", "#FF0000"],
     etoiles: 0,
-    photo: "https://pbs.twimg.com/media/FhJ7tTeXgAQySJE?format=jpg&name=small",
+    photo:
+      "https://assets.khelnow.com/news/uploads/2022/11/7bd1a62693c9bfb2.jpg",
     description:
-      "The US team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
+      "The Portugal team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
     TVL: 12455,
     ratio: 2.23543,
     nombreFans: 16,
@@ -69,9 +70,9 @@ export const dataCountries = [
     color: ["#00E0FF", "#FFFFFF", "#00E0FF"],
     etoiles: 2,
     photo:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e5/France_champion_of_the_Football_World_Cup_Russia_2018.jpg",
+      "https://assets.khelnow.com/news/uploads/2022/11/IMAGE_1654418058.jpg",
     description:
-      "The French team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
+      "The Argentina team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
     TVL: 2352312,
     ratio: 32,
     nombreFans: 214,
@@ -94,7 +95,7 @@ export const dataCountries = [
     color: ["#FFFFFF", "#FF0000", "#FFFFFF"],
     etoiles: 5,
     photo:
-      "https://i.pinimg.com/736x/73/32/a4/7332a4af26f18dfdadb1176de1c253e0.jpg",
+      "https://e3.365dm.com/21/07/2048x1152/skynews-england-diverse_5442322.jpg",
     description:
       "The Brazilian team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
     TVL: 832581,
@@ -196,8 +197,7 @@ export const dataCountries = [
     logo: "🇧🇪",
     color: ["#000000", "#E1C500", "#E11100"],
     etoiles: 4,
-    photo:
-      "https://static.lexpress.fr/medias_9706/w_640,h_358,c_fill,g_center/v1405290566/lahm-1_4969581.jpg",
+    photo: "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/10/17/152594.jpg",
     description:
       "The Belgium team of football is one of the best in the world, they will be in their best shape for the world cup 2022",
     TVL: 43,

@@ -16,7 +16,7 @@ function getCountryJson(name, listCountries) {
   }
 }
 
-function App() {
+function App({ currentAccount }) {
   const location = useLocation();
   console.log("location.pathname ==", location.pathname);
   let country = location.pathname.substring(1);
@@ -26,7 +26,11 @@ function App() {
   return (
     <div>
       <main>
-        <InfoTeam dataCountries={countryJson} isHolder={false} />
+        <InfoTeam
+          dataCountries={countryJson}
+          isHolder={true}
+          currentAccount={currentAccount}
+        />
         <TablePage />
       </main>
     </div>

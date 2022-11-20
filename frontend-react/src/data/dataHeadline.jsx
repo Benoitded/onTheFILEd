@@ -18,7 +18,7 @@ export const dataHeadline = [
     player: {
       name: "France",
       logo: "🇫🇷",
-      score: " ",
+      score: "18h",
     },
     competitor: {
       name: "Italy",

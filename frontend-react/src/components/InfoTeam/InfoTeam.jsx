@@ -4,7 +4,7 @@ import { dataCountries } from "../../data/dataCountries.jsx";
 import { dataMessages } from "../../data/dataMessages.jsx";
 import Swap from "../../components/Swap/Swap.jsx";
 
-export default function InfoTeam({ dataCountries, isHolder }) {
+export default function InfoTeam({ dataCountries, isHolder, currentAccount }) {
   const [isSwap, setIsSwap] = React.useState(false);
 
   const rows = [];
@@ -41,7 +41,11 @@ export default function InfoTeam({ dataCountries, isHolder }) {
   return (
     <div className="mainInfoTeam">
       {isSwap ? (
-        <Swap setIsSwap={setIsSwap} country={dataCountries.logo} />
+        <Swap
+          setIsSwap={setIsSwap}
+          country={dataCountries.logo}
+          currentAccount={currentAccount}
+        />
       ) : null}
       <div className="lineInfoTeam">
         <div className="firstColumnInfoTeam">

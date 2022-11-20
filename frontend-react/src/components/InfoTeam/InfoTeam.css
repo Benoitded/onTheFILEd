@@ -162,6 +162,7 @@
     justify-content: center;
     align-items: center;
     padding: 30px;
+    backdrop-filter: blur(50px);
 }
 
 .modal {

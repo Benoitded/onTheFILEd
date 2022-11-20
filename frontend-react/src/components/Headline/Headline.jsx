@@ -25,7 +25,9 @@ export default function Headline({ currentAccount, chain, setChain }) {
                 <div>{player.logo}</div>
                 <div>{player.name}</div>
               </div>
-              <div className="scoreHeadline">3-3</div>
+              <div className="scoreHeadline">
+                {player.score + " - " + competitor.score}
+              </div>
               <div className="logoPays">
                 <div>{competitor.logo}</div>
                 <div>{competitor.name}</div>
