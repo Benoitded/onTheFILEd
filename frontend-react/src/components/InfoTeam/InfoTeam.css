@@ -24,27 +24,28 @@
     padding: 20px;
     box-sizing: border-box;
     text-align: center;
-    justify-content: space-around;
+    justify-content: center;
     position: relative;
     z-index: 0;
     overflow: hidden;
 }
 
-.secondColumnInfoTeam>* {
-    padding: 10px;
+.secondColumnInfoTeam>*:nth-child(1),
+.secondColumnInfoTeam>*:nth-child(2),
+.secondColumnInfoTeam>*:nth-child(3) {
+    padding: 20px 10px;
     border-bottom: 1px solid rgba(43, 43, 43, 0.624);
+}
+
+.secondColumnInfoTeam>*:nth-child(4) {
+    /*Étoiles*/
+    padding-top: 10px;
 }
 
 .secondColumnInfoTeam>*:first-child {
     /*Titre*/
     font-size: 38px;
     font-weight: 800;
-}
-
-.secondColumnInfoTeam>*:last-child {
-    /*Étoiles*/
-    font-size: 18px;
-    border-bottom: none;
 }
 
 .numbersInfoTeam {
@@ -67,12 +68,12 @@
     font-weight: 700;
 }
 
-.secondColumnInfoTeam>button {
+.secondColumnInfoTeam>a>button {
     width: 100%;
     background-color: #232232;
 }
 
-.secondColumnInfoTeam>button:hover {
+.secondColumnInfoTeam>a>button:hover {
     background-color: #11111a;
 }
 
@@ -143,6 +144,7 @@
 
 .divsMessages {
     position: relative;
+    margin-bottom: 30px;
 }
 
 .griseMessages {
@@ -154,12 +156,28 @@
     left: 0;
     background-color: rgb(0, 0, 0);
     opacity: 0.9;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+.modal {
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1;
     z-index: 2;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 30px;
+    transition: opacity 2000ms ease-in-out;
 }
 
 
@@ -173,7 +191,7 @@
     top: -50%;
     left: -50%;
     background: radial-gradient(50% 50% at 50% 50%, #FF0000 0%, rgba(255, 0, 0, 0) 100%);
-    z-index: 1;
+    z-index: -1;
 }
 
 #gradientTeam2 {
@@ -196,7 +214,7 @@
     bottom: -50%;
     right: -50%;
     background: radial-gradient(50% 50% at 50% 50%, #006eff 0%, rgba(255, 0, 0, 0) 100%);
-    z-index: 1;
+    z-index: -1;
 }
 
 @media only screen and (max-width: 650px) {
@@ -217,4 +235,14 @@
     .numbersInfoTeam>*>*:last-child {
         font-size: 26px;
     }
+}
+
+
+/**** Exit Swap ****/
+
+.exitSwap {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1000;
 }

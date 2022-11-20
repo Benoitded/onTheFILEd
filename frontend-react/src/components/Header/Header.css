@@ -7,7 +7,12 @@ nav {
 nav>* {
     display: flex;
     justify-content: space-between;
-    gap: 10px
+    gap: 10px;
+}
+
+nav>*:first-child {
+    /* Icon */
+    cursor: pointer;
 }
 
 nav>div:first-child,

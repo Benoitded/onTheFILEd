@@ -2,8 +2,11 @@ import React, { useEffect, useState } from "react";
 import "./InfoTeam.css";
 import { dataCountries } from "../../data/dataCountries.jsx";
 import { dataMessages } from "../../data/dataMessages.jsx";
+import Swap from "../../components/Swap/Swap.jsx";
 
-export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
+export default function InfoTeam({ dataCountries, isHolder }) {
+  const [isSwap, setIsSwap] = React.useState(false);
+
   const rows = [];
   for (let i = 0; i < dataCountries.etoiles; i++) {
     rows.push(" ⭐️ ");
@@ -15,13 +18,29 @@ export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
       message: wave[1],
     };
   });
-  if (!isHolder) {
-    console.log("Pas bien");
+  const toSend =
+    "https://twitter.com/intent/tweet?text=Help+me+to+support+the+" +
+    dataCountries.name +
+    "+by+joining+onTheFILEd!!+⚽︎%0A+https://onthefiled.vercel.app/France+%0A%0ABest+dApp+for+the+FIFA+World+Cup+2020%0Abuilt+on+the+%40Filecoin+chain";
+
+  function updateColors(first) {
+    let debSent = "radial-gradient(50% 50% at 50% 50%, ";
+    let endSent = " 0%, rgba(255, 0, 0, 0) 100%)";
+    document.getElementById("gradientTeam1").style.background =
+      debSent + first[0] + endSent;
+    document.getElementById("gradientTeam2").style.background =
+      debSent + first[1] + endSent;
+    document.getElementById("gradientTeam3").style.background =
+      debSent + first[2] + endSent;
   }
 
+  useEffect(() => {
+    updateColors(dataCountries.color);
+  }, []);
   console.log(messagesCleaned);
   return (
     <div className="mainInfoTeam">
+      {isSwap ? <Swap setIsSwap={setIsSwap} /> : null}
       <div className="lineInfoTeam">
         <div className="firstColumnInfoTeam">
           <img
@@ -46,15 +65,19 @@ export default function InfoTeam({ dataCountries, isHolder, setOpenSwap }) {
             </div>
           </div>
           {isHolder ? (
-            <button>
-              {"🐥 Share your support to the " +
-                dataCountries.name +
-                " team on Twitter 🐥"}
-            </button>
+            <a href={toSend} target="_blank">
+              <button>
+                {"🐥 Share your support to the " +
+                  dataCountries.name +
+                  " team on Twitter 🐥"}
+              </button>
+            </a>
           ) : (
-            <button onClick={() => setOpenSwap(true)}>
-              {"Bet on " + dataCountries.name + "!"}
-            </button>
+            <a>
+              <button onClick={() => setIsSwap(true)}>
+                {"Bet on " + dataCountries.name + "!"}
+              </button>
+            </a>
           )}
           <div>{rows.map((e) => e)}</div> {/* Étoiles */}
           <div id="gradientTeam1" style={{}} />

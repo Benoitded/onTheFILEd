@@ -4,7 +4,7 @@ import "./Swap.css";
 import wheel from "../../assets/wheel.svg";
 import filecoin from "../../assets/filecoinLogo.png";
 
-export default function Swap({}) {
+export default function Swap({ setIsSwap }) {
   const [priceEuro, setPriceEuro] = useState();
   const [numberReceived, setNumberReceived] = useState(0);
   const priceFILE = 4.37235;
@@ -12,9 +12,17 @@ export default function Swap({}) {
     setNumberReceived(e.target.value);
     setPriceEuro(e.target.value * priceFILE);
   }
+  function closeSwap() {
+    console.log("gone");
+    setIsSwap(false);
+  }
+
+  function doNothing(event) {
+    event.stopPropagation();
+  }
   return (
-    <div className="mainSwap">
-      <div className="appSwap">
+    <div className="mainSwap" onClick={closeSwap}>
+      <div className="appSwap" onClick={(event) => doNothing(event)}>
         <div className="headerSwap">
           <div>Swap</div>
         </div>
